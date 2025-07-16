@@ -1,0 +1,97 @@
+/* register.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #212529;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f1f1f1;
+}
+
+.box {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+  flex-wrap: wrap;
+  padding: 2vh;
+}
+
+.one, .two {
+  width: 45vh;
+  min-height: 70vh;
+  background-color: #343a40;
+  border-radius: 2vh;
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Drag and drop box */
+.drop-area {
+  height: 25vh;
+  width: 25vh;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #495057;
+  color: #adb5bd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.preview {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.input {
+  width: 80%;
+  padding: 1vh;
+  margin: 1vh 0;
+  border: none;
+  border-radius: 1vh;
+  font-size: 1rem;
+  background-color: #495057;
+  color: white;
+}
+
+.input:focus {
+  outline: 2px solid #6ea8fe;
+}
+
+.btn {
+  width: 80%;
+  padding: 1.2vh;
+  margin-top: 1vh;
+  border: none;
+  border-radius: 1vh;
+  font-size: 1rem;
+  background-color: #6ea8fe;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4c9aff;
+}
+
+@media screen and (max-width: 600px) {
+  .box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .one, .two {
+    width: 80vw;
+  }
+}
