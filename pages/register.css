@@ -1,40 +1,42 @@
 /* register.css */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #212529;
-  font-family: 'Segoe UI', sans-serif;
-  color: #f1f1f1;
-}
-
-.box {
-  height: 100vh;
+.register-container {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5vh;
-  flex-wrap: wrap;
-  padding: 2vh;
+  background-color: #212529;
+  padding: 20px;
 }
 
-.one, .two {
-  width: 45vh;
-  min-height: 70vh;
+.register-form {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.form-section {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
   background-color: #343a40;
-  border-radius: 2vh;
-  padding: 2vh;
+  border-radius: 16px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  gap: 20px;
 }
 
-/* Drag and drop box */
 .drop-area {
-  height: 25vh;
-  width: 25vh;
+  height: 200px;
+  width: 200px;
+  min-height: 150px;
+  min-width: 150px;
   border: 2px dashed #ccc;
   border-radius: 50%;
   display: flex;
@@ -44,6 +46,11 @@ html, body {
   color: #adb5bd;
   text-align: center;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drop-area:hover {
+  border-color: #6ea8fe;
 }
 
 .preview {
@@ -53,27 +60,28 @@ html, body {
   border-radius: 50%;
 }
 
-.input {
-  width: 80%;
-  padding: 1vh;
-  margin: 1vh 0;
+.form-input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
   border: none;
-  border-radius: 1vh;
+  border-radius: 8px;
   font-size: 1rem;
   background-color: #495057;
   color: white;
+  box-sizing: border-box;
 }
 
-.input:focus {
+.form-input:focus {
   outline: 2px solid #6ea8fe;
 }
 
-.btn {
-  width: 80%;
-  padding: 1.2vh;
-  margin-top: 1vh;
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
   border: none;
-  border-radius: 1vh;
+  border-radius: 8px;
   font-size: 1rem;
   background-color: #6ea8fe;
   color: white;
@@ -81,17 +89,47 @@ html, body {
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.submit-btn:hover {
   background-color: #4c9aff;
 }
 
-@media screen and (max-width: 600px) {
-  .box {
+@media screen and (max-width: 768px) {
+  .register-form {
     flex-direction: column;
     align-items: center;
   }
+  
+  .form-section {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .drop-area {
+    height: 150px;
+    width: 150px;
+  }
+}
 
-  .one, .two {
-    width: 80vw;
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.form-input.error {
+  outline: 1px solid #dc3545;
+}
+
+@media screen and (max-width: 480px) {
+  .form-section {
+    padding: 16px;
+  }
+  
+  .form-input, .submit-btn {
+    padding: 10px;
   }
 }

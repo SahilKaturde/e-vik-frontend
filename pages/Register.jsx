@@ -1,8 +1,8 @@
 // src/pages/Register.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './register.css';
 import api from "../src/api";
-
 
 function Register() {
   const [profilePic, setProfilePic] = useState(null);
@@ -11,6 +11,8 @@ function Register() {
   const [address, setAddress] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [usernameError, setUsernameError] = useState('');
+  const navigate = useNavigate();
 
   const handleDrop = (e) => {
     e.preventDefault();
@@ -26,11 +28,29 @@ function Register() {
     e.preventDefault();
   };
 
+  const handleUsernameChange = (e) => {
+    const value = e.target.value;
+    setUsername(value);
+    
+    // Check for spaces in username
+    if (value.includes(' ')) {
+      setUsernameError('Spaces are not allowed in username');
+    } else {
+      setUsernameError('');
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
       alert("Passwords do not match");
+      return;
+    }
+
+    // Check for spaces in username before submitting
+    if (username.includes(' ')) {
+      setUsernameError('Please remove spaces from username before submitting');
       return;
     }
 
@@ -50,13 +70,7 @@ function Register() {
         },
       });
       alert("Registration successful!");
-      // optionally reset form
-      setUsername('');
-      setEmail('');
-      setPassword('');
-      setConfirmPassword('');
-      setAddress('');
-      setProfilePic(null);
+      navigate('/login');
     } catch (err) {
       console.error(err.response?.data || err.message);
       alert("Something went wrong during registration.");
@@ -64,79 +78,82 @@ function Register() {
   };
 
   return (
-    <form className="box" onSubmit={handleSubmit}>
-      <div className="one">
-        <div
-          className="drop-area"
-          onDrop={handleDrop}
-          onDragOver={handleDragOver}
-          onClick={() => document.getElementById('fileInput').click()}
-        >
-          {profilePic ? (
-            <img
-              src={URL.createObjectURL(profilePic)}
-              alt="Preview"
-              className="preview"
+    <div className="register-container">
+      <form className="register-form" onSubmit={handleSubmit}>
+        <div className="form-section">
+          <div
+            className="drop-area"
+            onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            onClick={() => document.getElementById('fileInput').click()}
+          >
+            {profilePic ? (
+              <img
+                src={URL.createObjectURL(profilePic)}
+                alt="Preview"
+                className="preview"
+              />
+            ) : (
+              <p>Drop profile image here or click</p>
+            )}
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              style={{ display: 'none' }}
+              onChange={handleFileChange}
             />
-          ) : (
-            <p>Drop profile image here or click</p>
-          )}
+          </div>
+
           <input
-            type="file"
-            id="fileInput"
-            accept="image/*"
-            style={{ display: 'none' }}
-            onChange={handleFileChange}
+            type="text"
+            placeholder="Username"
+            className="form-input"
+            value={username}
+            onChange={handleUsernameChange}
+            required
+          />
+          {usernameError && <div className="error-message">{usernameError}</div>}
+          <input
+            type="email"
+            placeholder="Email"
+            className="form-input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Address"
+            className="form-input"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
           />
         </div>
 
-        <input
-          type="text"
-          placeholder="Username"
-          className="input"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          className="input"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Address"
-          className="input"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
-      </div>
-
-      <div className="two">
-        <input
-          type="password"
-          placeholder="Password"
-          className="input"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          className="input"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-        <button className="btn" type="submit">
-          Create Account
-        </button>
-      </div>
-    </form>
+        <div className="form-section">
+          <input
+            type="password"
+            placeholder="Password"
+            className="form-input"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            className="form-input"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+          <button className="submit-btn" type="submit">
+            Create Account
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
