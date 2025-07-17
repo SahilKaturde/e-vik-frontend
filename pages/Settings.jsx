@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import api from "../src/api";
 import UploadedItemCard from "../src/Components/UploadedItemCard";
 import { useNavigate } from "react-router-dom";
-
+import Inbox from "./Inbox";
 
 function Settings() {
   const [user, setUser] = useState(null);
   const [items, setItems] = useState([]);
   const [transactions, setTransactions] = useState([]);
-  const [activeTab, setActiveTab] = useState("uploads"); // uploads | transactions
+  const [activeTab, setActiveTab] = useState("uploads"); // uploads | transactions | inbox
   const [loading, setLoading] = useState(true);
   const [redeemMessage, setRedeemMessage] = useState("");
   const [expandedItemId, setExpandedItemId] = useState(null);
 
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,9 +44,6 @@ function Settings() {
     localStorage.removeItem("token");
     window.location.href = "/login";
   };
-
-  
-
 
   const totalPoints = items.reduce((acc, item) => acc + item.points, 0);
 
@@ -89,7 +85,6 @@ function Settings() {
                   Logout
                 </button>
 
-                
                 {redeemMessage && (
                   <p className="text-sm text-yellow-400 mt-1">{redeemMessage}</p>
                 )}
@@ -108,7 +103,16 @@ function Settings() {
               >
                 Your Uploaded E-Waste
               </button>
-              
+              <button
+                className={`px-4 py-1 rounded-t-md text-sm font-semibold ${
+                  activeTab === "inbox"
+                    ? "bg-gray-800 text-green-300"
+                    : "text-gray-400 hover:text-white"
+                }`}
+                onClick={() => setActiveTab("inbox")}
+              >
+                Inbox
+              </button>
             </div>
 
             {/* Tab Content */}
@@ -148,7 +152,9 @@ function Settings() {
               </div>
             )}
 
-            
+            {activeTab === "inbox" && (
+              <Inbox/>
+            )}
           </>
         ) : (
           <p className="text-center text-red-500">Failed to load user data. <br />plz do login</p>
