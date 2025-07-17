@@ -9,7 +9,7 @@ import How from "../pages/How"
 import Leaderboard from "../pages/Leaderboard ";
 import PrivateRoute from "../src/utils/PrivateRoute";
 import Store from "./Components/Store";
-
+import Inbox from "../pages/Inbox";
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
         <Route path="/how-it-works" element={<How/>}/>
         <Route path="/leaderboard" element={<Leaderboard/>}/>
         <Route path="/store" element={<Store/>}/>
+        <Route path="/inbox" element={<Inbox/>}/>
 
       </Routes>
     </Router>
