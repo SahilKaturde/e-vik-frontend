@@ -57,6 +57,9 @@ function Navbar() {
             <Link to="/add-e-waste" className="hover:text-white transition" onClick={toggleMenu}>Add E-Waste</Link>
           </li>
           <li>
+            <Link to="/leaderboard" className="hover:text-white transition" onClick={toggleMenu}>Leaderboard</Link>
+          </li>
+          <li>
             <Link to="/settings" className="hover:text-white transition" onClick={toggleMenu}>Settings</Link>
           </li>
         </ul>
