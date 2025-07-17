@@ -1,8 +1,8 @@
 // src/pages/Login.jsx
 import React, { useState } from 'react';
-import './register.css'; 
 import api from "../src/api";
 import { useNavigate } from 'react-router-dom'; 
+import './login.css'
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -58,3 +58,4 @@ function Login() {
 }
 
 export default Login;
+
