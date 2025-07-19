@@ -1,22 +1,39 @@
-# React + Vite
+# 🌍 eVik – Recycle to Revive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> "What we throw away today shapes the world we leave for tomorrow."
 
-Currently, two official plugins are available:
+**eVik** is not just a tech project — it's a movement.  
+Built with heart and code, eVik empowers everyday people to turn electronic waste into a tool for environmental healing. Through simple actions — uploading, recycling, and rewarding — **we create ripples of impact that preserve the planet.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![eVik Logo](public/logo.PNG)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌱 Why eVik?
 
+Every broken phone, outdated laptop, or forgotten charger has a story — and a consequence.
 
-# 🌱 eVik – E-Waste Management Frontend
+Mountains of e-waste fill landfills every year, leaking toxins into soil, water, and air. But it doesn’t have to be this way.
 
-eVik is a web-based platform that empowers users to recycle electronic waste responsibly. Users can upload old electronics, earn EcoPoints, and redeem them for rewards. The frontend is built using **React.js**, styled with modern dark UI, and supports interactive user features like profiles, leaderboards, and image uploads.
+**eVik** is a call to action.  
+A platform where you can say:  
+**"I choose to be part of the solution."**
 
-![Capture - Register](public/Capture.PNG)
+---
+
+## 💚 What You Can Do
+
+### 🔹 Upload E-Waste  
+Give your old electronics a dignified end — recycle them responsibly.
+
+### 🟢 Earn EcoPoints  
+Get rewarded for helping the planet. Track your impact through our point system.
+
+### 🏆 Compete for Good  
+Join the **Eco Leaderboard** and show the world your commitment to sustainability.
+
+### 🎁 Redeem & Reinvest  
+Trade EcoPoints for useful rewards — because doing good should feel good too.
 
 ---
 
@@ -25,63 +42,71 @@ eVik is a web-based platform that empowers users to recycle electronic waste res
 ![How it Works](public/How%20it%20work.PNG)
 
 1. **Register & Join**  
-   Create an account to join the e-waste warrior community.
+   Become a part of our eco-warrior community. Track your uploads, points, and rank.
 
 2. **Upload E-Waste**  
-   Submit broken or unused electronic items for pickup and evaluation.
+   Add your old devices and describe their condition — we’ll handle the rest.
 
 3. **Verification**  
-   Items are reviewed for recyclability.
+   We assess recyclability and approve the submission.
 
 4. **Earn EcoPoints**  
-   Get rewarded for accepted uploads.
+   Accepted items grant points. More items = more impact.
 
 5. **Redeem Rewards**  
-   Exchange EcoPoints for cool items and discounts.
+   EcoPoints can be exchanged for cool, eco-friendly items.
 
-6. **Leaderboard**  
-   Track your contributions and compete for top ranks.
+6. **Rise on the Leaderboard**  
+   See how your efforts compare and inspire others to rise too.
 
 ---
 
-## 🖼 App Screenshots
+## 🖼 User Experience Preview
 
-### 🔐 Registration Page
-![Register UI](public/Capture.PNG)
+### 🔐 Registration Page  
+Create your profile and drop in with purpose.  
+![Register](public/Capture.PNG)
 
-### 🏠 Home Page (Uploaded Items)
-![Home Page](public/homepage.PNG)
+### 🏠 Home (Uploaded E-Waste Feed)  
+See what others are recycling — join the green wave.  
+![Homepage](public/homepage.PNG)
 
-### 📊 Leaderboard
+### 📊 Leaderboard  
+Celebrate eco-heroes across the community.  
 ![Leaderboard](public/leaderboard.PNG)
 
-### ⚙️ Profile Settings
-![Profile Settings](public/profile.PNG)
+### ⚙️ Profile & Points  
+Track your uploads, rewards, and earned EcoPoints.  
+![Profile](public/profile.PNG)
 
-### 🗑 Upload E-Waste
-![Upload Page](public/upload.PNG)
+### 🗑 Upload E-Waste  
+Drag, drop, and make a difference.  
+![Upload](public/upload.PNG)
 
 ---
 
-## 📁 Project Structure
+## ⚙️ Built With
+
+- **React.js** – Fast and responsive UI
+- **Tailwind CSS** – Sleek dark theme and mobile-friendly layouts
+- **React Router** – Seamless page transitions
+- **Context API** – Smart state management
+- **Chart.js** – Beautiful data visualizations
+- **Axios** – Secure backend communication
+
+---
+
+## 📦 Getting Started
 
 ```bash
-e-vik-frontend/
-│
-├── public/
-│   ├── Capture.PNG
-│   ├── homepage.PNG
-│   ├── How it work.PNG
-│   ├── leaderboard.PNG
-│   ├── logo.PNG
-│   ├── profile.PNG
-│   └── upload.PNG
-│
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── App.jsx
-│   └── index.js
-│
-├── package.json
-└── README.md
+# Clone the repository
+git clone https://github.com/SahilKaturde/e-vik-frontend.git
+
+# Move into the project folder
+cd e-vik-frontend
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
