@@ -81,7 +81,7 @@ Track your uploads, rewards, and earned EcoPoints.
 
 ### 🗑 Upload E-Waste  
 Drag, drop, and make a difference.  
-![Upload](public/screenshots/upload.PNG)
+![Upload](public/screenshots/upload.png)
 
 ### 💌 Inbox Notifications  
 Get real-time updates when your e-waste is verified, rejected, or rewarded.  
