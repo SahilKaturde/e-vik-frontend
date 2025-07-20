@@ -5,7 +5,7 @@
 **eVik** is not just a tech project — it's a movement.  
 Built with heart and code, eVik empowers everyday people to turn electronic waste into a tool for environmental healing. Through simple actions — uploading, recycling, and rewarding — **we create ripples of impact that preserve the planet.**
 
-![eVik Logo](public/logo.PNG)
+![eVik Logo](public/screenshots/logo.PNG)
 
 ---
 
@@ -39,7 +39,7 @@ Trade EcoPoints for useful rewards — because doing good should feel good too.
 
 ## 🧠 How It Works
 
-![How it Works](public/How%20it%20work.PNG)
+![How it Works](public/screenshots/How%20it%20work.PNG)
 
 1. **Register & Join**  
    Become a part of our eco-warrior community. Track your uploads, points, and rank.
@@ -65,23 +65,27 @@ Trade EcoPoints for useful rewards — because doing good should feel good too.
 
 ### 🔐 Registration Page  
 Create your profile and drop in with purpose.  
-![Register](public/Capture.PNG)
+![Register](public/screenshots/Capture.PNG)
 
 ### 🏠 Home (Uploaded E-Waste Feed)  
 See what others are recycling — join the green wave.  
-![Homepage](public/homepage.PNG)
+![Homepage](public/screenshots/homepage.PNG)
 
 ### 📊 Leaderboard  
 Celebrate eco-heroes across the community.  
-![Leaderboard](public/leaderboard.PNG)
+![Leaderboard](public/screenshots/leaderboard.PNG)
 
 ### ⚙️ Profile & Points  
 Track your uploads, rewards, and earned EcoPoints.  
-![Profile](public/profile.PNG)
+![Profile](public/screenshots/profile.PNG)
 
 ### 🗑 Upload E-Waste  
 Drag, drop, and make a difference.  
-![Upload](public/upload.PNG)
+![Upload](public/screenshots/upload.PNG)
+
+### 💌 Inbox Notifications  
+Get real-time updates when your e-waste is verified, rejected, or rewarded.  
+![Inbox](public/screenshots/Inbox.PNG)
 
 ---
 
